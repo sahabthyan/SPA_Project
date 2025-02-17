@@ -1,0 +1,46 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" type="text/css" th:href="@{/css/bill.css}">
+</head>
+<body>
+<center>
+<h1>Purchase Entry</h1>
+</center>
+<center>
+<div>
+  <form action="#" th:action="@{/purchase}" method="post">
+<label for="fname">Brand Name</label><br>
+    <input type="text" id="fname" name="brandName"><br>
+<label for="lname">Pack</label><br>
+    <input type="text" id="lname" name="pack" ><br>
+<label for="MNO">Pack Type</label><br>
+    <input type="text" id="mobno" name="packType" ><br>
+<label for="uname">MRP</label><br>
+    <input type="text" id="suname" name="mrp" ><br>  
+<label for="fname">Net Rate</label><br>
+    <input type="text" id="fname" name="netRate"><br>
+<label for="lname">Purchase Number</label><br>
+    <input type="text" id="lname" name="purchaseNo" ><br>
+<label for="MNO">Purchase Date</label><br>
+    <input type="text" id="mobno" name="purchaseDate" ><br>
+<label for="uname">P Qty</label><br>
+    <input type="text" id="suname" name="pQty" ><br>  
+<label for="fname">FP Qty</label><br>
+    <input type="text" id="fname" name="fpQty"><br>
+<label for="lname">Batch Number</label><br>
+    <input type="text" id="lname" name="batch" ><br>
+<label for="MNO">Expiry Date</label><br>
+    <input type="text" id="mobno" name="expDate" ><br>
+<label for="uname">HSN</label><br>
+    <input type="text" id="suname" name="hsn" ><br>  
+<label for="uname">composition</label><br>
+    <input type="text" id="suname" name="composition" ><br>  
+<button type="submit">ADD</button>
+  </form>
+</div>
+</center>
+</body>
+</html>
+ 
+
+

@@ -1,4 +1,5 @@
-<html xmlns:th="http://www.thymeleaf.org">
+
+<html>
 <head>
 <link rel="stylesheet" type="text/css" th:href="@{/css/bill.css}">
 </head>
@@ -6,41 +7,173 @@
 <center>
 <h1>Purchase Entry</h1>
 </center>
-<center>
 <div>
-  <form action="#" th:action="@{/purchase}" method="post">
-<label for="fname">Brand Name</label><br>
-    <input type="text" id="fname" name="brandName"><br>
-<label for="lname">Pack</label><br>
-    <input type="text" id="lname" name="pack" ><br>
-<label for="MNO">Pack Type</label><br>
-    <input type="text" id="mobno" name="packType" ><br>
-<label for="uname">MRP</label><br>
-    <input type="text" id="suname" name="mrp" ><br>  
-<label for="fname">Net Rate</label><br>
-    <input type="text" id="fname" name="netRate"><br>
-<label for="lname">Purchase Number</label><br>
-    <input type="text" id="lname" name="purchaseNo" ><br>
-<label for="MNO">Purchase Date</label><br>
-    <input type="text" id="mobno" name="purchaseDate" ><br>
-<label for="uname">P Qty</label><br>
-    <input type="text" id="suname" name="pQty" ><br>  
-<label for="fname">FP Qty</label><br>
-    <input type="text" id="fname" name="fpQty"><br>
-<label for="lname">Batch Number</label><br>
-    <input type="text" id="lname" name="batch" ><br>
-<label for="MNO">Expiry Date</label><br>
-    <input type="text" id="mobno" name="expDate" ><br>
-<label for="uname">HSN</label><br>
-    <input type="text" id="suname" name="hsn" ><br>  
-<label for="uname">composition</label><br>
-    <input type="text" id="suname" name="composition" ><br>  
-<button type="submit">ADD</button>
-  </form>
-</div>
+<center>
+  <table>
+  <tr>
+  <th><label>Brand Name</label></th>
+  <th><label >Pack</label></th>
+  <th><label>Pack Type</label></th>
+  <th><label>Batch Number</label></th>
+  <th><label>Expiry Date</label></th>
+  <th><label>HSN</label></th>
+  <th><label>MRP</label></th>
+  <th><label>Net Rate</label></th>
+  <th><label>P Qty</label></th>
+  <th><label>Purchase Number</label></th>
+  <th><label>Purchase Date</label></th>
+  <th><label>FP Qty</label></th>
+  <th><label>composition</label></th>
+  </tr>
+  
+  <tr>
+    <td><input type="text" name="brandName" id = "brandName"></td>
+    <td><input type="text" name="pack" id="pack"></td>
+    <td><input type="text" name="packType" id="packType"></td>
+    <td><input type="text" name="batch" id="batch"></td>
+    <td><input type="text" name="expDate" id="expDate"></td>
+    <td><input type="text" name="hsn" id="hsn"></td>
+    <td><input type="text" name="mrp" id="mrp"></td>
+    <td><input type="text" name="netRate" id="netRate"></td>
+    <td><input type="text" name="purchaseNo" id="purchaseNo"></td>
+    <td><input type="text" name="purchaseDate" id="purchaseDate"></td>
+	<td><input type="text" name="pQty" id="pQty"></td>
+    <td><input type="text" name="fpQty" id="fpQty"></td>
+	<td><input type="text" name="composition" id="composition"></td>
+  </tr>
+</table>
 </center>
+
+
+  <button onclick="addRow()">ADD</button>
+</div>
+ <table id="dataTable">
+  <tr>
+  <th><label>Brand Name</label></th>
+  <th><label >Pack</label></th>
+  <th><label>Pack Type</label></th>
+  <th><label>Batch Number</label></th>
+  <th><label>Expiry Date</label></th>
+  <th><label>HSN</label></th>
+  <th><label>MRP</label></th>
+  <th><label>Net Rate</label></th>
+  <th><label>P Qty</label></th>
+  <th><label>Purchase Number</label></th>
+  <th><label>Purchase Date</label></th>
+  <th><label>FP Qty</label></th>
+  <th><label>composition</label></th>
+  <th><label>Edit/Delete</label></th>
+  </tr>
+</table>
+
+
+<button onclick="submitData()">Upload</button>
+
+<button onclick="deleteAllRows()">Clear All</button>
+
+
+<script>
+        function addRow() {
+            // Get the table by ID
+            var table = document.getElementById("dataTable");
+
+            // Insert a new row at the end of the table
+            var newRow = table.insertRow(-1);
+
+            // Insert new cells (columns) in the row
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+			var cell3 = newRow.insertCell(2);
+			var cell4 = newRow.insertCell(3);
+			var cell5 = newRow.insertCell(4);
+			var cell6 = newRow.insertCell(5);
+			var cell7 = newRow.insertCell(6);
+			var cell8 = newRow.insertCell(7);
+			var cell9 = newRow.insertCell(8);
+			var cell10 = newRow.insertCell(9);
+			var cell11 = newRow.insertCell(10);
+			var cell12 = newRow.insertCell(11);
+			var cell13 = newRow.insertCell(12);
+			var cell14 = newRow.insertCell(13);
+			
+            // Add content to the new cells
+            cell1.innerHTML = document.getElementById("brandName").value;
+            cell2.innerHTML = document.getElementById("pack").value;
+			cell3.innerHTML = document.getElementById("packType").value;
+            cell4.innerHTML = document.getElementById("batch").value;
+			cell5.innerHTML = document.getElementById("expDate").value;
+            cell6.innerHTML = document.getElementById("hsn").value;
+			cell7.innerHTML = document.getElementById("mrp").value;
+            cell8.innerHTML = document.getElementById("netRate").value;
+			cell9.innerHTML = document.getElementById("purchaseNo").value;
+            cell10.innerHTML = document.getElementById("purchaseDate").value;
+			cell11.innerHTML = document.getElementById("pQty").value;
+            cell12.innerHTML = document.getElementById("fpQty").value;
+			cell13.innerHTML = document.getElementById("composition").value;
+			cell14.innerHTML = '<button onclick="editRow(this)">Edit</button><button onclick="deleteRow(this)">Delete</button>';
+			
+			document.getElementById("brandName").value = "";
+            document.getElementById("pack").value = "";
+			document.getElementById("packType").value = "";
+            document.getElementById("batch").value = "";
+			document.getElementById("expDate").value = "";
+            document.getElementById("hsn").value = "";
+			document.getElementById("mrp").value = "";
+			document.getElementById("netRate").value = "";
+			document.getElementById("purchaseNo").value = "";
+            document.getElementById("purchaseDate").value = "";
+			document.getElementById("pQty").value = "";
+            document.getElementById("fpQty").value = "";
+			document.getElementById("composition").value = "";
+        }
+		function deleteRow(btn) {
+            var row = btn.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+        }
+		
+		
+		function editRow(btn) {
+            var row = btn.parentNode.parentNode;
+			document.getElementById("brandName").value = row.cells[0].innerHTML;
+            document.getElementById("pack").value = row.cells[1].innerHTML;
+			document.getElementById("packType").value = row.cells[2].innerHTML;
+            document.getElementById("batch").value = row.cells[3].innerHTML;
+			document.getElementById("expDate").value = row.cells[4].innerHTML;
+            document.getElementById("hsn").value = row.cells[5].innerHTML;
+			document.getElementById("mrp").value = row.cells[6].innerHTML;
+			document.getElementById("netRate").value = row.cells[7].innerHTML;
+			document.getElementById("purchaseNo").value = row.cells[8].innerHTML;
+            document.getElementById("purchaseDate").value = row.cells[9].innerHTML;
+			document.getElementById("pQty").value = row.cells[10].innerHTML;
+            document.getElementById("fpQty").value = row.cells[11].innerHTML;
+			document.getElementById("composition").value = row.cells[12].innerHTML;
+			row.parentNode.removeChild(row);
+        }
+		
+		function submitData(){
+		var table = document.getElementById("dataTable");
+		var data = [];
+		
+		for(var i=1;i<table.rows.length;i++){
+			var row = table.rows[i];
+			
+			data.push({brandName:row.cells[0].innerHTML, pack:row.cells[1].innerHTML,packType:row.cells[2].innerHTML,batch:row.cells[3].innerHTML,expDate:row.cells[4].innerHTML,hsn:row.cells[5].innerHTML,mrp:row.cells[6].innerHTML,netRate:row.cells[7].innerHTML,purchaseNo:row.cells[8].innerHTML,purchaseDate:row.cells[9].innerHTML,pQty:row.cells[10].innerHTML,fpQty:row.cells[11].innerHTML,composition:row.cells[12].innerHTML})
+			
+		}
+		fetch("http://localhost:8080/purchase", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data),
+            })
+            .then(response => response.json())
+            .then(data => alert("Data submitted successfully!"))
+            .catch(error => console.error("Error:", error));
+        document.getElementById("dataTable").innerHTML = "<tr><th><label>Brand Name</label></th><th><label >Pack</label></th><th><label>Pack Type</label></th><th><label>Batch Number</label></th><th><label>Expiry Date</label></th><th><label>HSN</label></th><th><label>MRP</label></th><th><label>Net Rate</label></th><th><label>P Qty</label></th><th><label>Purchase Number</label></th><th><label>Purchase Date</label></th><th><label>FP Qty</label></th><th><label>composition</label></th><th><label>Edit/Delete</label></th></tr>";
+		}
+		 function deleteAllRows() {
+        document.getElementById("dataTable").innerHTML = "<tr><th><label>Brand Name</label></th><th><label >Pack</label></th><th><label>Pack Type</label></th><th><label>Batch Number</label></th><th><label>Expiry Date</label></th><th><label>HSN</label></th><th><label>MRP</label></th><th><label>Net Rate</label></th><th><label>P Qty</label></th><th><label>Purchase Number</label></th><th><label>Purchase Date</label></th><th><label>FP Qty</label></th><th><label>composition</label></th><th><label>Edit/Delete</label></th></tr>";
+    }
+    </script>
+
 </body>
 </html>
- 
-
-

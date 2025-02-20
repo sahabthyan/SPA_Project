@@ -1,4 +1,10 @@
-com\SPA\SPA_Project\DBConnection\DBConnection.class
 com\SPA\SPA_Project\controller\LoginController.class
-com\SPA\SPA_Project\model\User.class
+com\SPA\SPA_Project\controller\PurchaseController.class
+com\SPA\SPA_Project\model\PurchaseEntry.class
 com\SPA\SPA_Project\App.class
+com\SPA\SPA_Project\repository\PurchaseEntryRepository.class
+com\SPA\SPA_Project\service\PurchaseAndBillingService.class
+com\SPA\SPA_Project\repository\LoginRepository.class
+com\SPA\SPA_Project\model\User.class
+com\SPA\SPA_Project\service\LoginService.class
+com\SPA\SPA_Project\controller\BillingController.class
